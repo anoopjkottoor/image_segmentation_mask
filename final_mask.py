@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Nov  6 12:00:50 2019
 
-@author: anoop
-"""
 import numpy as np
 import random
 import cv2
@@ -68,12 +62,12 @@ mask=np.asarray(mask)
 mask1=cv2.resize(mask[0], (boxshape[0],boxshape[1]),interpolation=cv2.INTER_NEAREST)
 mask1=mask1.flatten()
 ansmask1=ansmask.flatten()
-#if box[0] in range(ansbox[0],ansbox[1]) and box[1] in range(ansbox[2],ansbox[3]) and box[2] in range(ansbox[4],ansbox[5]) and box[3] in range(ansbox[6],ansbox[7]):
+if box[0] in range(ansbox[0],ansbox[1]) and box[1] in range(ansbox[2],ansbox[3]) and box[2] in range(ansbox[4],ansbox[5]) and box[3] in range(ansbox[6],ansbox[7]):
 r=findsim(ansmask1,mask1)
 print("percentage similarity{}".format(r))
 
-#else:
-#    print("Out of position")
+else:
+    print("Out of position")
     
     
 
